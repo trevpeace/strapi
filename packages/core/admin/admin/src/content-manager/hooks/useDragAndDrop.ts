@@ -66,7 +66,10 @@ type DropCollectedProps = {
  */
 const useDragAndDrop = <
   TIndex extends number | Array<number>,
-  TItem extends { index: TIndex; id?: Entity.ID; [key: string]: unknown }
+  TItem extends { index: TIndex; id?: Entity.ID; [key: string]: unknown } = {
+    index: TIndex;
+    [key: string]: unknown;
+  }
 >(
   active: boolean,
   {
